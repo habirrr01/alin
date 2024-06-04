@@ -1,0 +1,1045 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MATRIKS INVERS &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Matriks Invers';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="DETERMINAN MATRIKS" href="determinan%20matriks.html" />
+    <link rel="prev" title="ALJABAR MATRIKS" href="Aljabar%20Matriks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Komputasi Aljabar Linier - 2A
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Tutorial%20Membuat%20Web%20Statis%20menggunakan%20Jupyter%20Book.html"><strong>MEMBUAT WEB STATIS MENGGUNAKAN JUPYTER BOOK DI GITHUB</strong></a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Sistem%20Persamaan%20Linear%20dan%20Metode%20Eliminasi%20Gaussian.html"><strong>SISTEM PERSAMAAN LINEAR DAN METODE ELIMINASI GAUSSIAN</strong></a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Aljabar%20Matriks.html"><strong>ALJABAR MATRIKS</strong></a></li>
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>MATRIKS INVERS</strong></a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="determinan%20matriks.html"><strong>DETERMINAN MATRIKS</strong></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Eigen%20Value%20%26%20Eigen%20Vector.html"><strong>EIGEN VALUE DAN EIGEN VECTOR</strong></a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Transformasi%20Linier.html"><strong>TRANSFORMASI LINIER</strong></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Algoritma%20Page%20Rank.html"><strong>ALGORITMA PAGE RANK</strong></a></li>
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/habirrr01/alin/blob/master/tugas/Matriks Invers.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/habirrr01/alin" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/habirrr01/alin/issues/new?title=Issue%20on%20page%20%2FMatriks Invers.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Matriks Invers.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MATRIKS INVERS</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>MATRIKS INVERS</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-matriks-invers"><em>Apa itu Matriks Invers?</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers"><em>Sifat-sifat Matriks Invers</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-gauss-jordan-untuk-mencari-invers-matriks"><em>Metode Gauss-Jordan untuk Mencari Invers Matriks</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linear-menggunakan-matrix-invers"><em>Penyelesaian Sistem Persamaan Linear Menggunakan Matrix Invers</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penyelesaian-sistem-persamaan-linear-4-variabel-dengan-matrix-invers"><em>Contoh Penyelesaian Sistem Persamaan linear 4 Variabel dengan Matrix Invers</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi"><em>Referensi</em></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="matriks-invers">
+<h1><strong>MATRIKS INVERS</strong><a class="headerlink" href="#matriks-invers" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="apa-itu-matriks-invers">
+<h1><em>Apa itu Matriks Invers?</em><a class="headerlink" href="#apa-itu-matriks-invers" title="Link to this heading">#</a></h1>
+<p>Invers matriks adalah suatu konsep dalam aljabar linear yang mengacu pada kebalikan dari sebuah matriks. Jika kita memiliki sebuah matriks <span class="math notranslate nohighlight">\( A \)</span>, inversnya, dilambangkan sebagai <span class="math notranslate nohighlight">\( A^{-1}\)</span>, adalah matriks yang ketika dikalikan dengan matriks aslinya, menghasilkan matriks identitas. Dengan kata lain, jika <span class="math notranslate nohighlight">\( A \times A^{-1} = I \)</span>, di mana <span class="math notranslate nohighlight">\( I \)</span> adalah matriks identitas, maka <span class="math notranslate nohighlight">\( A^{-1} \)</span> adalah invers dari <span class="math notranslate nohighlight">\( A \)</span>.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sifat-sifat-matriks-invers">
+<h1><em>Sifat-sifat Matriks Invers</em><a class="headerlink" href="#sifat-sifat-matriks-invers" title="Link to this heading">#</a></h1>
+<p>Sifat-sifat dari invers matriks:</p>
+<ol class="arabic simple">
+<li><p><strong>Hanya untuk Matriks Persegi</strong>: Invers matriks hanya bisa ada untuk matriks yang punya jumlah baris dan kolom sama.</p></li>
+<li><p><strong>Hanya untuk Matriks Non-singular</strong>: Invers matriks hanya ada jika determinan matriksnya tidak nol. Determinan itu adalah nilai yang dihitung dari unsur-unsur matriks persegi.</p></li>
+<li><p><strong>Hanya Ada Satu Invers</strong>: Setiap matriks punya satu invers saja. Kalau <span class="math notranslate nohighlight">\( B \)</span> dan <span class="math notranslate nohighlight">\( C \)</span> keduanya invers dari <span class="math notranslate nohighlight">\( A \)</span>, berarti <span class="math notranslate nohighlight">\( B \)</span> sama dengan <span class="math notranslate nohighlight">\( C \)</span>.</p></li>
+<li><p><strong>Invers dari Invers adalah Matriks Itu Sendiri</strong>: Kalau <span class="math notranslate nohighlight">\( B \)</span> adalah invers dari <span class="math notranslate nohighlight">\( A \)</span>, maka invers dari <span class="math notranslate nohighlight">\( B \)</span> adalah <span class="math notranslate nohighlight">\( A \)</span>. Jadi, <span class="math notranslate nohighlight">\( (A^{-1})^{-1} = A \)</span>.</p></li>
+<li><p><strong>Invers dari Hasil Kali Matriks</strong>: Invers dari hasil kali dua matriks adalah hasil kali invers masing-masing matriks dalam urutan terbalik. Misalnya, kalau <span class="math notranslate nohighlight">\( A \)</span> dan <span class="math notranslate nohighlight">\( B \)</span> keduanya tidak nol, maka <span class="math notranslate nohighlight">\( (AB)^{-1} = B^{-1}A^{-1} \)</span>.</p></li>
+<li><p><strong>Invers dari Transpos Matriks</strong>: Invers dari transpos suatu matriks adalah transpos dari inversnya. Transpos itu adalah menukar baris dan kolom. Kalau <span class="math notranslate nohighlight">\( A \)</span> tidak nol, maka <span class="math notranslate nohighlight">\( (A^T)^{-1} = (A^{-1})^T \)</span>.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="metode-gauss-jordan-untuk-mencari-invers-matriks">
+<h1><em>Metode Gauss-Jordan untuk Mencari Invers Matriks</em><a class="headerlink" href="#metode-gauss-jordan-untuk-mencari-invers-matriks" title="Link to this heading">#</a></h1>
+<p>Metode Gauss-Jordan adalah teknik yang digunakan untuk menemukan invers dari sebuah matriks. Ini melibatkan transformasi matriks asli menjadi matriks identitas dengan menggunakan serangkaian operasi baris, dan saat operasi ini diterapkan pada matriks identitas yang terhubung, matriks asli akan berubah menjadi inversnya.</p>
+<p>Langkah-langkah umumnya adalah sebagai berikut:</p>
+<ol class="arabic simple">
+<li><p><strong>Susun Matriks Gabungan</strong>: Susun matriks gabungan dari matriks yang ingin diinvers (<span class="math notranslate nohighlight">\( A \)</span>) dan matriks identitas (<span class="math notranslate nohighlight">\( I \)</span>). Matriks identitas ditempatkan di sebelah kanan matriks <span class="math notranslate nohighlight">\( A \)</span>.</p></li>
+<li><p><strong>Gunakan Operasi Baris</strong>: Terapkan operasi baris untuk mengubah matriks gabungan menjadi bentuk echelon atau bentuk tereduksi. Ini melibatkan operasi tambah, kurang, kali, atau bagi baris untuk mencapai 0 di bawah elemen diagonal utama.</p></li>
+<li><p><strong>Ubah Menjadi Identitas</strong>: Selanjutnya, terapkan operasi baris lanjutan untuk mengubah matriks echelon menjadi bentuk identitas. Ini dilakukan dengan memastikan setiap baris memiliki 1 di posisi diagonal utama, dan semua elemen di atas dan di bawah diagonal utama adalah 0.</p></li>
+<li><p><strong>Interpretasi Hasil</strong>: Matriks di sebelah kanan matriks gabungan akan menjadi invers dari matriks asli <span class="math notranslate nohighlight">\( A \)</span>.</p></li>
+<li><p><strong>Periksa Hasil</strong>: Pastikan untuk memverifikasi bahwa matriks hasil memenuhi kriteria invers, yaitu ketika dikalikan dengan matriks asli, menghasilkan matriks identitas.</p></li>
+</ol>
+<p><em>Contoh :</em></p>
+<p>Kita akan mencari invers dari matriks:
+<span class="math notranslate nohighlight">\( A = \begin{bmatrix} 3 &amp; 1 &amp; 4 \\ 1 &amp; 5 &amp; 9 \\ 2 &amp; 6 &amp; 5 \end{bmatrix} \)</span></p>
+<ol class="arabic simple">
+<li><p><strong>Susun Matriks Gabungan</strong>:
+Matriks gabungan dari <span class="math notranslate nohighlight">\( A \)</span> dan matriks identitas (<span class="math notranslate nohighlight">\( I \)</span>) adalah:
+<span class="math notranslate nohighlight">\( \begin{bmatrix} 3 &amp; 1 &amp; 4 &amp; | &amp; 1 &amp; 0 &amp; 0 \\ 1 &amp; 5 &amp; 9 &amp; | &amp; 0 &amp; 1 &amp; 0 \\ 2 &amp; 6 &amp; 5 &amp; | &amp; 0 &amp; 0 &amp; 1 \end{bmatrix} \)</span></p></li>
+<li><p><strong>Gunakan Operasi Baris</strong>:</p>
+<ul class="simple">
+<li><p>Langkah pertama adalah membuat 0 di bawah elemen pertama di baris pertama. Kita kurangkan baris kedua dengan <span class="math notranslate nohighlight">\( \frac{1}{3} \times \)</span> baris pertama dan kurangkan baris ketiga dengan <span class="math notranslate nohighlight">\( \frac{2}{3} \times \)</span> baris pertama. Ini memberikan kita matriks:
+<span class="math notranslate nohighlight">\( \begin{bmatrix} 3 &amp; 1 &amp; 4 &amp; | &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; \frac{14}{3} &amp; \frac{29}{3} &amp; | &amp; -\frac{1}{3} &amp; 1 &amp; 0 \\ 0 &amp; \frac{4}{3} &amp; -\frac{3}{3} &amp; | &amp; -\frac{2}{3} &amp; 0 &amp; 1 \end{bmatrix} \)</span></p></li>
+<li><p>Kemudian, untuk membuat 0 di bawah elemen kedua di baris kedua, kita kurangkan baris ketiga dengan <span class="math notranslate nohighlight">\( \frac{4}{14} \times \)</span> baris kedua. Ini memberikan kita:
+<span class="math notranslate nohighlight">\( \begin{bmatrix} 3 &amp; 1 &amp; 4 &amp; | &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; \frac{14}{3} &amp; \frac{29}{3} &amp; | &amp; -\frac{1}{3} &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; -\frac{17}{14} &amp; | &amp; -\frac{5}{14} &amp; -\frac{4}{14} &amp; 1 \end{bmatrix} \)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Ubah Menjadi Identitas</strong>:</p>
+<ul class="simple">
+<li><p>Sekarang kita ubah elemen diagonal menjadi 1. Kita bagi baris pertama dengan <span class="math notranslate nohighlight">\( 3 \)</span>, baris kedua dengan <span class="math notranslate nohighlight">\( \frac{14}{3} \)</span>, dan baris ketiga dengan <span class="math notranslate nohighlight">\( -\frac{17}{14} \)</span>. Ini memberikan kita:
+<span class="math notranslate nohighlight">\( \begin{bmatrix} 1 &amp; \frac{1}{3} &amp; \frac{4}{3} &amp; | &amp; \frac{1}{3} &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; \frac{29}{42} &amp; | &amp; -\frac{1}{14} &amp; \frac{3}{14} &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; | &amp; \frac{5}{17} &amp; \frac{4}{17} &amp; -\frac{14}{17} \end{bmatrix} \)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Operasi Baris Lanjutan</strong>:</p>
+<ul class="simple">
+<li><p>Kita lanjutkan dengan mengubah elemen di atas diagonal menjadi 0. Kita kurangkan baris pertama dengan <span class="math notranslate nohighlight">\( \frac{1}{3} \times \)</span> baris kedua dan kurangkan baris kedua dengan <span class="math notranslate nohighlight">\( \frac{29}{42} \times \)</span> baris ketiga. Ini memberikan kita:
+<span class="math notranslate nohighlight">\( \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; | &amp; \frac{1}{2} &amp; -\frac{1}{6} &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; | &amp; \frac{1}{2} &amp; \frac{1}{6} &amp; -\frac{14}{3} \\ 0 &amp; 0 &amp; 1 &amp; | &amp; \frac{5}{17} &amp; \frac{4}{17} &amp; -\frac{14}{17} \end{bmatrix} \)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Interpretasi Hasil</strong>:</p>
+<ul class="simple">
+<li><p>Sekarang, bagian sebelah kanan matriks gabungan adalah invers dari matriks awal <span class="math notranslate nohighlight">\( A \)</span>. Jadi, invers dari matriks <span class="math notranslate nohighlight">\( A \)</span> adalah:
+<span class="math notranslate nohighlight">\( A^{-1} = \begin{bmatrix} \frac{1}{2} &amp; -\frac{1}{6} &amp; 0 \\ \frac{1}{2} &amp; \frac{1}{6} &amp; -\frac{14}{3} \\ \frac{5}{17} &amp; \frac{4}{17} &amp; -\frac{14}{17} \end{bmatrix} \)</span></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="penyelesaian-sistem-persamaan-linear-menggunakan-matrix-invers">
+<h1><em>Penyelesaian Sistem Persamaan Linear Menggunakan Matrix Invers</em><a class="headerlink" href="#penyelesaian-sistem-persamaan-linear-menggunakan-matrix-invers" title="Link to this heading">#</a></h1>
+<p>Metode invers matriks adalah cara lain untuk menyelesaikan sistem dua persamaan linier. Dalam metode ini, kita menggunakan invers dari matriks koefisien untuk menemukan solusi sistem. Ini berarti jika kita memiliki sebuah matriks <span class="math notranslate nohighlight">\( A \)</span> yang merupakan koefisien dari sistem persamaan, kita mencari invers dari matriks tersebut, dan kemudian mengalikannya dengan matriks hasil (<span class="math notranslate nohighlight">\( B \)</span>) untuk mendapatkan matriks yang berisi nilai variabel yang tidak diketahui (<span class="math notranslate nohighlight">\( X \)</span>). Jika matriks <span class="math notranslate nohighlight">\( A \)</span> dapat dibalik (determinannya tidak nol), maka kita bisa menggunakan metode ini. Namun, jika determinan matriks <span class="math notranslate nohighlight">\( A \)</span> nol, metode ini tidak berlaku.</p>
+<p>Sebagai contoh, jika kita memiliki matriks koefisien <span class="math notranslate nohighlight">\( A = \begin{pmatrix} 2 &amp; -5 \\ -8 &amp; -9 \end{pmatrix} \)</span> dan matriks hasil <span class="math notranslate nohighlight">\( B = \begin{pmatrix} -2 \\ 8 \end{pmatrix} \)</span>, kita dapat mencari invers dari matriks <span class="math notranslate nohighlight">\( A \)</span> (jika ada) dan mengalikannya dengan matriks <span class="math notranslate nohighlight">\( B \)</span> untuk menemukan nilai variabel yang tidak diketahui, dalam contoh ini, <span class="math notranslate nohighlight">\( x \)</span> dan <span class="math notranslate nohighlight">\( y \)</span>. Jika kita menemukan inversnya (<span class="math notranslate nohighlight">\( A^{-1} \)</span>), kita bisa mengalikan <span class="math notranslate nohighlight">\( A^{-1} \)</span> dengan <span class="math notranslate nohighlight">\( B \)</span> untuk mendapatkan matriks <span class="math notranslate nohighlight">\( X \)</span> yang berisi solusi persamaan tersebut.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="contoh-penyelesaian-sistem-persamaan-linear-4-variabel-dengan-matrix-invers">
+<h1><em>Contoh Penyelesaian Sistem Persamaan linear 4 Variabel dengan Matrix Invers</em><a class="headerlink" href="#contoh-penyelesaian-sistem-persamaan-linear-4-variabel-dengan-matrix-invers" title="Link to this heading">#</a></h1>
+<p>Sistem Persamaan Linier 4 variabel</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}5x_1 + 2x_2 + 10x_3 + 16x_4 = 16 \\\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}3x_1 + x_2 - 2x_4 = 4 \\\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}3x_1 + x_2 - 9x_3 - 19x_4 = -4 \\\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}4x_1 + x_2 - 3x_4 = 5 \\\end{split}\]</div>
+<ol class="arabic simple">
+<li><p>kita cari terlebih dahulu untuk invers dari persamaan tersebut</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">RowSwap</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">):</span>
+<span class="c1"># =============================================================================</span>
+<span class="c1">#     A is a NumPy array.  RowSwap will return duplicate array with rows</span>
+<span class="c1">#     k and l swapped. (menukarkan persamaan)</span>
+<span class="c1"># =============================================================================</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># m is number of rows in A (jumlah baris A)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># n is number of columns in A (jumlah kolom A)</span>
+
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
+
+    <span class="k">return</span> <span class="n">B</span>
+
+<span class="k">def</span> <span class="nf">RowScale</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">scale</span><span class="p">):</span>
+<span class="c1"># =============================================================================</span>
+<span class="c1">#     A is a NumPy array.  RowScale will return duplicate array with the</span>
+<span class="c1">#     entries of row k multiplied by scale. (mengalikan entry baris A dengan skala)</span>
+<span class="c1"># =============================================================================</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># m is number of rows in A</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># n is number of columns in A</span>
+
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">*=</span> <span class="n">scale</span>
+
+    <span class="k">return</span> <span class="n">B</span>
+
+<span class="k">def</span> <span class="nf">RowAdd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">scale</span><span class="p">):</span>
+<span class="c1"># =============================================================================</span>
+<span class="c1">#     A is a numpy array.  RowAdd will return duplicate array with row</span>
+<span class="c1">#     l modified.  The new values will be the old values of row l added to</span>
+<span class="c1">#     the values of row k, multiplied by scale. (menambahkan nilai baris k dikalikan dengan skala)</span>
+<span class="c1"># =============================================================================</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># m is number of rows in A</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># n is number of columns in A</span>
+
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">scale</span>
+
+    <span class="k">return</span> <span class="n">B</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import library numpy dan memasukkan persamaan dalam bentuk matrix</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">19</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matrix A  = </span><span class="se">\n</span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">A1</span><span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matrix A  = 
+[[  5   2  10  16   1   0   0   0]
+ [  3   1   0  -2   0   1   0   0]
+ [  3   1  -9 -19   0   0   1   0]
+ [  4   1   0  -3   0   0   0   1]]
+
+
+[[  1.   1.  10.  19.   1.   0.   0.  -1.]
+ [  3.   1.   0.  -2.   0.   1.   0.   0.]
+ [  3.   1.  -9. -19.   0.   0.   1.   0.]
+ [  4.   1.   0.  -3.   0.   0.   0.   1.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A2</span><span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   1.  10.  19.   1.   0.   0.  -1.]
+ [  0.  -2. -30. -59.  -3.   1.   0.   3.]
+ [  3.   1.  -9. -19.   0.   0.   1.   0.]
+ [  4.   1.   0.  -3.   0.   0.   0.   1.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A3</span><span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   1.  10.  19.   1.   0.   0.  -1.]
+ [  0.  -2. -30. -59.  -3.   1.   0.   3.]
+ [  0.  -2. -39. -76.  -3.   0.   1.   3.]
+ [  4.   1.   0.  -3.   0.   0.   0.   1.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A4</span><span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   1.  10.  19.   1.   0.   0.  -1.]
+ [  0.  -2. -30. -59.  -3.   1.   0.   3.]
+ [  0.  -2. -39. -76.  -3.   0.   1.   3.]
+ [  0.  -3. -40. -79.  -4.   0.   0.   5.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A5</span><span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   1.  10.  19.   1.   0.   0.  -1.]
+ [  0.   1.  10.  20.   1.   1.   0.  -2.]
+ [  0.  -2. -39. -76.  -3.   0.   1.   3.]
+ [  0.  -3. -40. -79.  -4.   0.   0.   5.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A6</span><span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   0.   0.  -1.   0.  -1.   0.   1.]
+ [  0.   1.  10.  20.   1.   1.   0.  -2.]
+ [  0.  -2. -39. -76.  -3.   0.   1.   3.]
+ [  0.  -3. -40. -79.  -4.   0.   0.   5.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A7</span><span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   0.   0.  -1.   0.  -1.   0.   1.]
+ [  0.   1.  10.  20.   1.   1.   0.  -2.]
+ [  0.   0. -19. -36.  -1.   2.   1.  -1.]
+ [  0.  -3. -40. -79.  -4.   0.   0.   5.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A8</span><span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   0.   0.  -1.   0.  -1.   0.   1.]
+ [  0.   1.  10.  20.   1.   1.   0.  -2.]
+ [  0.   0. -19. -36.  -1.   2.   1.  -1.]
+ [  0.   0. -10. -19.  -1.   3.   0.  -1.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A9</span><span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A8</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   0.   0.  -1.   0.  -1.   0.   1.]
+ [  0.   1.   0.   1.   0.   4.   0.  -3.]
+ [  0.   0. -19. -36.  -1.   2.   1.  -1.]
+ [  0.   0. -10. -19.  -1.   3.   0.  -1.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A10</span><span class="o">=</span> <span class="n">RowScale</span><span class="p">(</span><span class="n">A9</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   0.   0.  -1.   0.  -1.   0.   1.]
+ [  0.   1.   0.   1.   0.   4.   0.  -3.]
+ [  0.   0. -19. -36.  -1.   2.   1.  -1.]
+ [  0.   0. -20. -38.  -2.   6.   0.  -2.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A11</span><span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A10</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   0.   0.  -1.   0.  -1.   0.   1.]
+ [  0.   1.   0.   1.   0.   4.   0.  -3.]
+ [  0.   0.   1.   2.   1.  -4.   1.   1.]
+ [  0.   0. -20. -38.  -2.   6.   0.  -2.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A12</span><span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A11</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   0.   0.  -1.   0.  -1.   0.   1.]
+ [  0.   1.   0.   1.   0.   4.   0.  -3.]
+ [  0.   0.   1.   2.   1.  -4.   1.   1.]
+ [  0.   0.   0.   2.  18. -74.  20.  18.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A13</span><span class="o">=</span> <span class="n">RowScale</span><span class="p">(</span><span class="n">A12</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A13</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   0.   0.  -1.   0.  -1.   0.   1.]
+ [  0.   1.   0.   1.   0.   4.   0.  -3.]
+ [  0.   0.   1.   2.   1.  -4.   1.   1.]
+ [  0.   0.   0.   1.   9. -37.  10.   9.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A14</span><span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A13</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A14</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   0.   0.   0.   9. -38.  10.  10.]
+ [  0.   1.   0.   1.   0.   4.   0.  -3.]
+ [  0.   0.   1.   2.   1.  -4.   1.   1.]
+ [  0.   0.   0.   1.   9. -37.  10.   9.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A15</span><span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A14</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   0.   0.   0.   9. -38.  10.  10.]
+ [  0.   1.   0.   0.  -9.  41. -10. -12.]
+ [  0.   0.   1.   2.   1.  -4.   1.   1.]
+ [  0.   0.   0.   1.   9. -37.  10.   9.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A16</span><span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A15</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.   0.   0.   0.   9. -38.  10.  10.]
+ [  0.   1.   0.   0.  -9.  41. -10. -12.]
+ [  0.   0.   1.   0. -17.  70. -19. -17.]
+ [  0.   0.   0.   1.   9. -37.  10.   9.]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>2.Setelah kita sudah menemukan inversnya (<span class="math notranslate nohighlight">\( A^{-1} \)</span>), kita bisa mengalikan <span class="math notranslate nohighlight">\( A^{-1} \)</span> dengan <span class="math notranslate nohighlight">\( B \)</span> untuk mendapatkan matriks <span class="math notranslate nohighlight">\( X \)</span> yang berisi solusi persamaan tersebut.</p>
+<p><span class="math notranslate nohighlight">\(X = A^{-1}B = \begin{bmatrix} 9 &amp; -38 &amp; 10 &amp; 10 \\ -9 &amp; 41 &amp; -10 &amp; -12 \\ -17 &amp; 70 &amp; -19 &amp; -17 \\ 9 &amp; -37 &amp; 10 &amp; 9 \end{bmatrix}\)</span> x <span class="math notranslate nohighlight">\(\begin{bmatrix} 16 \\ 4 \\ -4 \\ 5 \end{bmatrix}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A_inverse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">38</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">],[</span><span class="o">-</span><span class="mi">17</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="o">-</span><span class="mi">19</span><span class="p">,</span> <span class="o">-</span><span class="mi">17</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">37</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">16</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">]])</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">A_inverse</span> <span class="o">@</span> <span class="n">b</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 2]
+ [ 0]
+ [-1]
+ [ 1]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="referensi">
+<h1><em>Referensi</em><a class="headerlink" href="#referensi" title="Link to this heading">#</a></h1>
+<p>1). <a class="reference external" href="https://akupintar.id/info-pintar/-/blogs/matriks-pengertian-operasi-determinan-invers-dan-contoh-soal">https://akupintar.id/info-pintar/-/blogs/matriks-pengertian-operasi-determinan-invers-dan-contoh-soal</a></p>
+<p>2).<a class="reference external" href="https://byjus.com/maths/inverse-matrix/">https://byjus.com/maths/inverse-matrix/</a></p>
+<p>3). <a class="reference external" href="https://www.brilio.net/ragam/rumus-invers-matriks-pahami-konsep-sifat-dan-contoh-soalnya-2310192.html#:~:text=Beberapa%20sifat%2Dsifat%20invers%20matriks,determinan%20tidak%20sama%20dengan%20nol.">https://www.brilio.net/ragam/rumus-invers-matriks-pahami-konsep-sifat-dan-contoh-soalnya-2310192.html#:~:text=Beberapa%20sifat%2Dsifat%20invers%20matriks,determinan%20tidak%20sama%20dengan%20nol.</a></p>
+<p>4). <a class="reference external" href="https://www.mathsisfun.com/algebra/matrix-inverse-row-operations-gauss-jordan.html">https://www.mathsisfun.com/algebra/matrix-inverse-row-operations-gauss-jordan.html</a></p>
+<p>5). <a class="reference external" href="https://ocw.upj.ac.id/files/Slide-IFA104-IFA104-Slide-11.pdf">https://ocw.upj.ac.id/files/Slide-IFA104-IFA104-Slide-11.pdf</a></p>
+<p>6). <a class="reference external" href="https://youtu.be/4QCjOhi_Qhs?si=Xs3kO6wyUaZmJZ5d">https://youtu.be/4QCjOhi_Qhs?si=Xs3kO6wyUaZmJZ5d</a></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Aljabar%20Matriks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>ALJABAR MATRIKS</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="determinan%20matriks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>DETERMINAN MATRIKS</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>MATRIKS INVERS</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-matriks-invers"><em>Apa itu Matriks Invers?</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers"><em>Sifat-sifat Matriks Invers</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-gauss-jordan-untuk-mencari-invers-matriks"><em>Metode Gauss-Jordan untuk Mencari Invers Matriks</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linear-menggunakan-matrix-invers"><em>Penyelesaian Sistem Persamaan Linear Menggunakan Matrix Invers</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penyelesaian-sistem-persamaan-linear-4-variabel-dengan-matrix-invers"><em>Contoh Penyelesaian Sistem Persamaan linear 4 Variabel dengan Matrix Invers</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi"><em>Referensi</em></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

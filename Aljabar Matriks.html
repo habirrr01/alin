@@ -1,0 +1,1066 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ALJABAR MATRIKS &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Aljabar Matriks';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MATRIKS INVERS" href="Matriks%20Invers.html" />
+    <link rel="prev" title="SISTEM PERSAMAAN LINEAR DAN METODE ELIMINASI GAUSSIAN" href="Sistem%20Persamaan%20Linear%20dan%20Metode%20Eliminasi%20Gaussian.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Komputasi Aljabar Linier - 2A
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Tutorial%20Membuat%20Web%20Statis%20menggunakan%20Jupyter%20Book.html"><strong>MEMBUAT WEB STATIS MENGGUNAKAN JUPYTER BOOK DI GITHUB</strong></a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Sistem%20Persamaan%20Linear%20dan%20Metode%20Eliminasi%20Gaussian.html"><strong>SISTEM PERSAMAAN LINEAR DAN METODE ELIMINASI GAUSSIAN</strong></a></li>
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>ALJABAR MATRIKS</strong></a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Matriks%20Invers.html"><strong>MATRIKS INVERS</strong></a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="determinan%20matriks.html"><strong>DETERMINAN MATRIKS</strong></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Eigen%20Value%20%26%20Eigen%20Vector.html"><strong>EIGEN VALUE DAN EIGEN VECTOR</strong></a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Transformasi%20Linier.html"><strong>TRANSFORMASI LINIER</strong></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Algoritma%20Page%20Rank.html"><strong>ALGORITMA PAGE RANK</strong></a></li>
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/habirrr01/alin/blob/master/tugas/Aljabar Matriks.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/habirrr01/alin" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/habirrr01/alin/issues/new?title=Issue%20on%20page%20%2FAljabar Matriks.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Aljabar Matriks.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>ALJABAR MATRIKS</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>ALJABAR MATRIKS</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-matriks"><em>Apa itu Matriks ?</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-matriks-menggunakan-numpy"><em>Implementasi Matriks menggunakan Numpy</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-operasi-matriks"><em>Operasi - Operasi Matriks</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-transpose"><em>Matriks Transpose</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-elementer"><em>Matriks Elementer</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi"><em>referensi</em></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="aljabar-matriks">
+<h1><strong>ALJABAR MATRIKS</strong><a class="headerlink" href="#aljabar-matriks" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="apa-itu-matriks">
+<h1><em>Apa itu Matriks ?</em><a class="headerlink" href="#apa-itu-matriks" title="Link to this heading">#</a></h1>
+<p>Saat kita bekerja dengan matriks dalam pemrograman, penting untuk memahami dimensi atau ukurannya. Cara kita menyatakan ukuran matriks, dengan menyebutkan jumlah baris terlebih dahulu dan kemudian diikuti oleh jumlah kolom, membantu kita memahami bagaimana matriks tersebut terorganisir. Misalnya, jika kita menyebutkan bahwa matriks A memiliki ukuran 2x2, itu artinya matriks tersebut memiliki 2 baris dan 2 kolom. Demikian juga, jika kita memiliki matriks B yang berukuran 2x3, maka matriks tersebut memiliki 2 baris dan 3 kolom. Dengan pemahaman tentang dimensi matriks ini, kita dapat dengan mudah mengelola dan memanipulasi data matriks dalam konteks pemrograman.</p>
+<p>A= <span class="math notranslate nohighlight">\(\begin{bmatrix}1 &amp; 2 \\3 &amp; 4\end{bmatrix}\)</span> B= <span class="math notranslate nohighlight">\(\begin{bmatrix}1 &amp; 2 &amp; 6 \\3 &amp; 4 &amp; 5\end{bmatrix}\)</span></p>
+<p>Umumnya, kita menggunakan variabel dalam subskrip untuk menunjukkan elemen-elemen matriks. Sebagai contoh, <span class="math notranslate nohighlight">\(a_{ij}\)</span> menunjukkan elemen di baris ke-<span class="math notranslate nohighlight">\(i\)</span> dan kolom ke-<span class="math notranslate nohighlight">\(j\)</span> dari matriks A. Dengan notasi ini, kita bisa merujuk dengan mudah ke elemen-elemen tertentu dalam matriks dan melakukan berbagai operasi matematika atau analisis data. Sebuah matriks dengan hanya satu kolom disebut vektor, Tiap elemen dalam vektor diwakili dengan huruf kecil, dengan subskrip yang menunjukkan posisi entri dalam matriks. Sebagai contoh, <span class="math notranslate nohighlight">\(B_{12}\)</span> merujuk pada elemen di baris pertama dan kolom kedua dari matriks <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(B_{12}\)</span>= <span class="math notranslate nohighlight">\(\begin{bmatrix} 2 \end{bmatrix}\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="implementasi-matriks-menggunakan-numpy">
+<h1><em>Implementasi Matriks menggunakan Numpy</em><a class="headerlink" href="#implementasi-matriks-menggunakan-numpy" title="Link to this heading">#</a></h1>
+<p>Implementasi matriks menggunakan NumPy adalah salah satu teknik yang sangat berguna dalam pemrograman Python. NumPy adalah pustaka yang kuat untuk komputasi numerik, dan menyediakan alat yang sangat baik untuk bekerja dengan matriks dan vektor.</p>
+<p>Dengan menggunakan NumPy, kita dapat dengan mudah membuat, memanipulasi, dan menghitung matriks dan vektor dalam Python. Misalnya, kita dapat membuat matriks dengan memanggil fungsi seperti <code class="docutils literal notranslate"><span class="pre">numpy.array()</span></code>, dan kemudian mengakses properti <code class="docutils literal notranslate"><span class="pre">.shape</span></code> untuk mengetahui jumlah baris dan kolom dalam matriks tersebut. Misalnya, jika kita memiliki matriks M, kita dapat mengetahui dimensinya dengan menggunakan <code class="docutils literal notranslate"><span class="pre">M.shape</span></code>.Selain itu kita juga dapat melakukan berbagai operasi matematika, seperti penjumlahan, pengurangan, perkalian, dan pembagian matriks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Membuat matriks dengan numpy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Matriks A:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Matriks B:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Dimensi matriks A: </span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Dimensi matriks B: </span><span class="si">{</span><span class="n">B</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks A:
+[[1 3]
+ [2 1]]
+Matriks B:
+[[ 3  0  4]
+ [-1 -2  1]]
+Dimensi matriks A: (2, 2)
+Dimensi matriks B: (2, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dalam penggunaan pustaka NumPy pada bahasa pemrograman Python, kita mampu membuat matriks acak dengan mudah, sesuai dengan ukuran yang diinginkan. Fungsi <code class="docutils literal notranslate"><span class="pre">np.random.randint()</span></code> biasanya digunakan dalam proses menghasilkan matriks yang terdiri dari bilangan bulat acak dalam rentang 0 hingga 9. Dengan menentukan ukuran matriks melalui parameter <code class="docutils literal notranslate"><span class="pre">size=(baris,</span> <span class="pre">kolom)</span></code>, kita dapat membuat matriks dengan dimensi yang spesifik. Setelahnya, dengan menggunakan fungsi <code class="docutils literal notranslate"><span class="pre">print()</span></code>, nilai-nilai dari matriks yang telah dibuat ditampilkan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Membuat matriks random menggunakan numpy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks A:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks B:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks C:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks D:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks A:
+[[8 8 1]
+ [8 8 6]
+ [7 7 2]]
+
+Matriks B:
+[[2 8 9]
+ [2 8 8]
+ [1 9 4]]
+
+Matriks C:
+[[3 3]
+ [0 6]
+ [1 4]]
+
+Matriks D:
+[[6 4 8]
+ [5 6 6]
+ [3 6 1]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="operasi-operasi-matriks">
+<h1><em>Operasi - Operasi Matriks</em><a class="headerlink" href="#operasi-operasi-matriks" title="Link to this heading">#</a></h1>
+<p><strong>1. Perkalian Matriks dengan skalar</strong></p>
+<p>Dalam matematika, matriks dapat dikalikan dengan sebuah skalar, yang merupakan bilangan tunggal, baik itu bilangan bulat, pecahan, atau bilangan riil. Proses perkalian ini dilakukan dengan mengalikan setiap elemen dari matriks dengan skalar tersebut. Misalnya, jika kita memiliki matriks A dan kita ingin mengalikannya dengan skalar λ, maka setiap elemen <span class="math notranslate nohighlight">\(a_{ij}\)</span> dari matriks A akan dikalikan dengan skalar λ. Hasilnya adalah matriks baru yang memiliki ukuran yang sama dengan matriks awal, tetapi setiap elemennya telah dikalikan dengan skalar tersebut.</p>
+<p><span class="math notranslate nohighlight">\(λ.A:=(λ.a_{ij})_{i=1,...,m;j=1,...,n}\)</span></p>
+<p>Contoh perhitungan:</p>
+<p><span class="math notranslate nohighlight">\(5.\begin{pmatrix}
+1 &amp; -3 &amp; 2\\
+1 &amp; 2 &amp; 7
+\end{pmatrix} = \begin{pmatrix}
+5.1 &amp; 5.(-3) &amp; 5.2\\
+5.1 &amp; 5.2 &amp; 5.7
+\end{pmatrix} = \begin{pmatrix}
+5 &amp; -15 &amp; 10\\
+5 &amp; 10 &amp; 35
+\end{pmatrix}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#contoh perkalian matriks dengan skalar</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">AA</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">A</span> 
+<span class="n">BB</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">B</span> 
+<span class="n">CC</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">C</span> 
+<span class="n">DD</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">D</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil perkalian skalar c dengan matriks A:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">AA</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil perkalian skalar c dengan matriks B:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">BB</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil perkalian skalar c dengan matriks C:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">CC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil perkalian skalar c dengan matriks D:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">DD</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil perkalian skalar c dengan matriks A:
+[[40 40  5]
+ [40 40 30]
+ [35 35 10]]
+
+Hasil perkalian skalar c dengan matriks B:
+[[10 40 45]
+ [10 40 40]
+ [ 5 45 20]]
+
+Hasil perkalian skalar c dengan matriks C:
+[[15 15]
+ [ 0 30]
+ [ 5 20]]
+
+Hasil perkalian skalar c dengan matriks D:
+[[30 20 40]
+ [25 30 30]
+ [15 30  5]]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>2. Penjumlahan 2 buah matriks dengan dimensi yang sama</strong></p>
+<p>Penjumlahan dan pengurangan matriks hanya dapat dilakukan ketika kedua matriks memiliki ukuran yang sama atau setara, yang berarti jumlah baris dan jumlah kolomnya harus identik. Proses penjumlahan atau pengurangan dilakukan dengan cara menambahkan atau mengurangkan elemen-elemen matriks yang memiliki posisi yang sama. Misalnya, elemen pada baris ke-i dan kolom ke-j dari matriks pertama akan dijumlahkan atau dikurangkan dengan elemen pada posisi yang sama dari matriks kedua. Hasil dari operasi ini akan menghasilkan matriks baru yang juga memiliki ukuran yang sama seperti matriks asal, dengan setiap elemen pada posisi yang sesuai berisi hasil penjumlahan atau pengurangan dari elemen-elemen yang bersesuaian dalam matriks-matriks tersebut.</p>
+<p><span class="math notranslate nohighlight">\(a_{ij}\pm b_{ij}=c_{ij}\)</span></p>
+<p>atau</p>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix}
+a_{11}\pm b_{11} &amp; a_{12}\pm b_{12} &amp; a_{13}\pm b_{13} \\
+a_{21}\pm b_{21} &amp; a_{22}\pm b_{22} &amp; a_{23}\pm b_{23}
+\end{bmatrix}\)</span> = <span class="math notranslate nohighlight">\(\begin{bmatrix}
+c_{11} &amp; c_{12} &amp; c_{13}\\
+c_{21} &amp; c_{22} &amp; c_{23}
+\end{bmatrix}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#contoh penjumlahan 2 buah matriks yang sama.</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="n">AA</span> <span class="o">+</span> <span class="n">BB</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A:</span><span class="se">\n</span><span class="si">{</span><span class="n">AA</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;B:</span><span class="se">\n</span><span class="si">{</span><span class="n">BB</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;k = A + B:</span><span class="se">\n</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A:
+[[40 40  5]
+ [40 40 30]
+ [35 35 10]]
+B:
+[[10 40 45]
+ [10 40 40]
+ [ 5 45 20]]
+k = A + B:
+[[50 80 50]
+ [50 80 70]
+ [40 80 30]]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>3. Perkalian matriks</strong></p>
+<p>Dalam matematika, terdapat metode perkalian matriks yang disebut perkalian titik (atau perkalian matriks standar), di mana setiap elemen baris dari matriks pertama dikalikan dengan setiap elemen kolom dari matriks kedua, dan hasilnya dijumlahkan untuk mendapatkan elemen baru pada matriks hasil. Dengan cara ini, kita dapat menggabungkan informasi dari setiap baris matriks pertama dengan setiap kolom matriks kedua untuk mendapatkan matriks baru yang mewakili hubungan yang kompleks antara keduanya. Proses ini dapat diulangi untuk setiap baris matriks pertama dan setiap kolom matriks kedua hingga semua elemen matriks hasil terisi.</p>
+<p><span class="math notranslate nohighlight">\(c_{ij}=\sum_{k=1}^m a_{ik}.b_{kj}\)</span></p>
+<p>Contoh perhitungan:</p>
+<p><span class="math notranslate nohighlight">\(\begin{pmatrix}
+1 &amp; 2 &amp; 3\\
+4 &amp; 5 &amp; 6
+\end{pmatrix}.\begin{pmatrix}
+6 &amp; -1 \\
+3 &amp; 2 \\
+0 &amp; -3
+\end{pmatrix} = \begin{pmatrix}
+1.6+2.3+3.0 &amp; 1.(-1)+2.2+3.(-3)\\
+4.6+5.3+6.0 &amp; 4.(-1)+5.2+6.(-3) 
+\end{pmatrix} = \begin{pmatrix}
+12 &amp; -6 \\
+39 &amp; -12 
+\end{pmatrix}\)</span></p>
+<p><strong>- Sifat-Sifat Matriks</strong></p>
+<p>Sifat-sifat matriks sebagai berikut :</p>
+<p><span class="math notranslate nohighlight">\(1. A+B=B+A\)</span></p>
+<p><span class="math notranslate nohighlight">\(2. (A+B)+C=A+(B+C)\)</span></p>
+<p><span class="math notranslate nohighlight">\(3. k(AB)=(kA)B\)</span></p>
+<p><span class="math notranslate nohighlight">\(4. (AB)C=(BC)\)</span></p>
+<p><span class="math notranslate nohighlight">\(5. A(B+C)=AB+AC\)</span></p>
+<p><span class="math notranslate nohighlight">\(6. (A+B)C=AC+BC\)</span></p>
+<p><span class="math notranslate nohighlight">\(7. AB≠BA\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#cara 1 menggunakan numpy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Matriks A</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A:</span><span class="se">\n</span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="se">\n</span><span class="s1">dimensi: </span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Matriks B</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;B:</span><span class="se">\n</span><span class="si">{</span><span class="n">B</span><span class="si">}</span><span class="se">\n</span><span class="s1">dimensi: </span><span class="si">{</span><span class="n">B</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Perkalian matriks A dan B</span>
+<span class="n">AB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Matriks AB:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">AB</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A:
+[[8 8 1]
+ [8 8 6]
+ [7 7 2]]
+dimensi: (3, 3)
+
+B:
+[[2 8 9]
+ [2 8 8]
+ [1 9 4]]
+dimensi: (3, 3)
+
+Matriks AB:
+[[ 33 137 140]
+ [ 38 182 160]
+ [ 30 130 127]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#cara 2 menggunakan @</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Matriks A</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Matriks A:</span><span class="se">\n</span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="se">\n</span><span class="s1">Dimensi: </span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Matriks B</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Matriks B:</span><span class="se">\n</span><span class="si">{</span><span class="n">B</span><span class="si">}</span><span class="se">\n</span><span class="s1">Dimensi: </span><span class="si">{</span><span class="n">B</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Perkalian matriks A dan B</span>
+<span class="n">AB</span> <span class="o">=</span> <span class="n">A</span> <span class="o">@</span> <span class="n">B</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hasil perkalian matriks A dan B:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">AB</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks A:
+[[8 8 1]
+ [8 8 6]
+ [7 7 2]]
+Dimensi: (3, 3)
+
+Matriks B:
+[[2 8 9]
+ [2 8 8]
+ [1 9 4]]
+Dimensi: (3, 3)
+
+Hasil perkalian matriks A dan B:
+[[ 33 137 140]
+ [ 38 182 160]
+ [ 30 130 127]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menggunakan iterasi</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+     <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+            <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil perkalian matriks:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">C</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil perkalian matriks:
+[0, -6, 7]
+[5, -2, 9]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="matriks-transpose">
+<h1><em>Matriks Transpose</em><a class="headerlink" href="#matriks-transpose" title="Link to this heading">#</a></h1>
+<p>Transpose matriks adalah operasi yang menghasilkan matriks baru dengan menukar posisi baris dan kolom dari matriks asalnya. Dengan kata lain, setiap elemen yang berada di baris i dan kolom j pada matriks asal akan menjadi elemen yang berada di baris j dan kolom i pada matriks transposenya</p>
+<p>Contoh :</p>
+<p><span class="math notranslate nohighlight">\(B= \begin{bmatrix}1 &amp; 2 &amp; 6 \\3 &amp; 4 &amp; 5\end{bmatrix}\)</span></p>
+<p><span class="math notranslate nohighlight">\(B^T= \begin{bmatrix}1 &amp; 3\\2 &amp; 4\\6 &amp; 5 \end{bmatrix}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#contoh matriks transpose</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Matriks A</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Matriks A:</span><span class="se">\n</span><span class="si">{</span><span class="n">AA</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Matriks B</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Matriks B:</span><span class="se">\n</span><span class="si">{</span><span class="n">BB</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Transpose matriks A dan B</span>
+<span class="n">A_T</span> <span class="o">=</span> <span class="n">AA</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">B_T</span> <span class="o">=</span> <span class="n">BB</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+
+<span class="c1"># Matriks transpose A dan B</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Transpose dari matriks A:</span><span class="se">\n</span><span class="si">{</span><span class="n">A_T</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Transpose dari matriks B:</span><span class="se">\n</span><span class="si">{</span><span class="n">B_T</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks A:
+[[40 40  5]
+ [40 40 30]
+ [35 35 10]]
+
+Matriks B:
+[[10 40 45]
+ [10 40 40]
+ [ 5 45 20]]
+
+Transpose dari matriks A:
+[[40 40 35]
+ [40 40 35]
+ [ 5 30 10]]
+
+Transpose dari matriks B:
+[[10 10  5]
+ [40 40 45]
+ [45 40 20]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="matriks-elementer">
+<h1><em>Matriks Elementer</em><a class="headerlink" href="#matriks-elementer" title="Link to this heading">#</a></h1>
+<p>Matriks elementer adalah matriks yang diperoleh dari matriks identitas melalui satu atau lebih operasi baris elementer. Matriks identitas adalah matriks persegi yang memiliki nilai 1 di sepanjang diagonal utamanya dan nilai 0 di tempat lainnya. Operasi baris elementer adalah operasi dasar yang dapat dilakukan pada baris-baris matriks, seperti menukar dua baris, mengalikan baris dengan skalar non-nol, atau menambahkan satu baris dengan baris lainnya yang telah dikalikan dengan skalar tertentu.
+Tentu, berikut adalah contoh matriks elementer yang diperoleh dari matriks identitas 2x2 dengan menerapkan beberapa operasi baris elementer:</p>
+<ol class="arabic simple">
+<li><p>Mulai dengan matriks identitas 2x2:
+<span class="math notranslate nohighlight">\( I = \begin{bmatrix} 
+1 &amp; 0 \\
+0 &amp; 1 \\
+\end{bmatrix} \)</span></p></li>
+<li><p>Misalkan kita ingin menukar baris pertama dengan baris kedua. Kita dapat melakukan operasi baris elementer untuk mencapai ini:
+<span class="math notranslate nohighlight">\( \begin{bmatrix} 
+0 &amp; 1 \\
+1 &amp; 0 \\
+\end{bmatrix} \)</span></p></li>
+<li><p>Kemudian, kita mungkin ingin mengalikan baris kedua dengan 3:
+<span class="math notranslate nohighlight">\( \begin{bmatrix} 
+0 &amp; 1 \\
+3 &amp; 0 \\
+\end{bmatrix} \)</span></p></li>
+<li><p>Selanjutnya, kita bisa menambahkan baris kedua dengan baris pertama:
+<span class="math notranslate nohighlight">\( \begin{bmatrix} 
+3 &amp; 1 \\
+3 &amp; 0 \\
+\end{bmatrix} \)</span></p></li>
+</ol>
+<p>Matriks di atas adalah contoh dari matriks elementer yang diperoleh dari matriks identitas dengan menerapkan beberapa operasi baris elementer. Dengan cara ini, kita dapat membentuk berbagai matriks elementer yang berbeda dengan menerapkan operasi baris elementer pada matriks identitas asli.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
+
+<span class="c1"># Matriks acak A</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">randMatrix</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks A:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Matriks baris elementer E</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks E:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
+
+<span class="c1"># Operasi baris elementer E pada matriks A</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">E</span> <span class="o">*</span> <span class="n">A</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil operasi baris elementer E pada matriks A:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks A:
+Matrix([[48, 30, 65], [27, 20, 16], [16, 28, 97]])
+Matriks E:
+Matrix([[0, 1, 0], [1, 0, 0], [0, 0, 1]])
+Hasil operasi baris elementer E pada matriks A:
+Matrix([[27, 20, 16], [48, 30, 65], [16, 28, 97]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="referensi">
+<h1><em>referensi</em><a class="headerlink" href="#referensi" title="Link to this heading">#</a></h1>
+<p>1). <a class="reference external" href="https://id.wikipedia.org/wiki/Matriks_(matematika)">(https://id.wikipedia.org/wiki/Matriks_(matematika))</a></p>
+<p>2). <a class="reference external" href="https://www.youtube.com/watch?v=z6xfiHUuWWQ&amp;amp;list=PLZS-MHyEIRo6V6C2PHEx2Lt0hWIB_cL58&amp;amp;index=5">https://www.youtube.com/watch?v=z6xfiHUuWWQ&amp;list=PLZS-MHyEIRo6V6C2PHEx2Lt0hWIB_cL58&amp;index=5</a></p>
+<p>3). <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.matrix.html">https://numpy.org/doc/stable/reference/generated/numpy.matrix.html</a></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Sistem%20Persamaan%20Linear%20dan%20Metode%20Eliminasi%20Gaussian.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>SISTEM PERSAMAAN LINEAR DAN METODE ELIMINASI GAUSSIAN</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Matriks%20Invers.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>MATRIKS INVERS</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>ALJABAR MATRIKS</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-matriks"><em>Apa itu Matriks ?</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-matriks-menggunakan-numpy"><em>Implementasi Matriks menggunakan Numpy</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-operasi-matriks"><em>Operasi - Operasi Matriks</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-transpose"><em>Matriks Transpose</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-elementer"><em>Matriks Elementer</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi"><em>referensi</em></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
